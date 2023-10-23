@@ -14,7 +14,8 @@ if(req.method==='GET'){
 
 	const subscription = await stripe.subscriptions.list({
 		limit:1,
-		customer: customer?.id
+		customer: customer?.id,
+		expand:['data.default_payment_method', 'data.customer']
 	})
 	return res.status(200).json({subscription})
 }

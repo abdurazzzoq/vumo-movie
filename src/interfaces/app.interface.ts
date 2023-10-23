@@ -33,3 +33,28 @@ export interface Products {
   };
   name: string;
 }
+
+
+export interface Subscription{
+  current_period_start: number;
+  id: string;
+  current_period_end: number
+  plan:{
+    nickname:string;
+    amount: number;
+    active: boolean;
+  }
+  default_payment_method:{
+    card:{
+      brand: string
+      exp_month: number;
+      exp_year: number;
+      funding?: string;
+      last4:string
+    }
+    billing_details?:{
+      email?:string
+      name:string
+    }
+  }
+}
