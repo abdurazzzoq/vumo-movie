@@ -5,11 +5,12 @@ import { AiOutlineUser } from "react-icons/ai";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { AuthContext } from "@/context/auth.context";
 import Link from "next/link";
+import { useAuth } from "@/hooks/useAuth";
 
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
-  const { logout } = useContext(AuthContext);
+  const { logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {

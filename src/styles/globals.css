@@ -21,6 +21,10 @@
 
     .modalButton{
         @apply flex items-center justify-center rounded-full border-2  hover:bg-[#181818]/80 transition-all   }
+
+        .membershipLink{
+            @apply cursor-pointer text-blue-500 hover:underline
+        }
 }
 
 

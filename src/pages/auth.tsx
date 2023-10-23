@@ -68,7 +68,7 @@ const Auth = () => {
           <Form className="relative space-y-8 mt-24 md:mt-0 md:max-w-md md:px-10 py-10 px-6 rounded bg-black/75">
             {error && <p className="text-red-500 font-semibold">{error}</p>}
           <h1 className="font-semibold text-4xl">
-          {auth === "signup" ? "Sign Up" : "Sign In"}
+          {auth === "signup" ? "Tizimga kirish" : "Ro'yhatdan o'tish"}
         </h1>
             <div className="space-y-4">
               <TextField name="email" placeholder="Email" type={'text'} />
@@ -85,31 +85,31 @@ const Auth = () => {
                 disabled={isLoading}
                 className="w-full font-semibold rounded bg-[#E10856] py-3 mt-4"
               >
-                {isLoading ? 'Loading...' : auth === 'signin' ? "Sign In": 'Sign Up' }
+                {isLoading ? 'Loading...' : auth === 'signin' ? "Tizimga kirish" : "Ro'yhatdan o'tish" }
              
               </button> 
            
 
 {auth === "signin" ? (
           <div className=" text-[gray]">
-            Not yet account?{" "}
+            Akkauntingiz yo'qmi?{" "}
             <button
               type="button"
               className=" text-white hover:underline"
               onClick={() => toggleAuth("signup")}
             >
-              Sign Up Now
+              Ro'yhatdan o'tish
             </button>
           </div>
         ) : (
           <div className=" text-[gray]">
-            Already have account?{" "}
+            Akkauntingiz bormi?{" "}
             <button
               type="button"
               className=" text-white hover:underline"
               onClick={() => toggleAuth("signin")}
             >
-              Sign In
+              Tizimga kirish
             </button>
           </div>
         )}
