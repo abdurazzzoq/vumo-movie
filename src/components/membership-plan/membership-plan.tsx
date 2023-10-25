@@ -59,10 +59,10 @@ const MembershipPlan = ({ subscription }: MembershipPlanProps) => {
           <div className="">
             <div className="flex items-center gap-2">
               <span className="py-1 px-3 uppercase rounded-sm bg-white/30">
-                {subscription.customer.invoice_settings.default_payment_method.card.brand}
+                {subscription.default_payment_method? subscription.default_payment_method.card.brand: subscription.customer.invoice_settings.default_payment_method.card.brand}
               </span>
               <p>
-                **** **** ****{subscription.customer.invoice_settings.default_payment_method.card.last4}
+                **** **** ****{subscription.default_payment_method? subscription.default_payment_method.card.last4: subscription.customer.invoice_settings.default_payment_method.card.last4}
               </p>
             </div>
             <p className="mt-3">

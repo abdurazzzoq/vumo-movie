@@ -9,9 +9,12 @@ import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import moment from 'moment'
 import Head from "next/head";
+import { useAuth } from "@/hooks/useAuth";
 
 const Account = ({subscription}:AccountProps) => {
 console.log(subscription);
+
+const {logout}= useAuth()
 
 
   return (
@@ -66,7 +69,7 @@ console.log(subscription);
 
         <div className="mt-6 grid grid-cols-1 gap-x-4 md:grid-cols-4 border md:border-b-0 md:border-x-1 md:bordet-t px-4 py-4 md:pb-0">
           <h1 className="text-lg text-[gray]">Settings</h1>
-          <div className="text-blue-500 hover:underline col-span-3 cursor-pointer">
+          <div onClick={logout} className="text-blue-500 hover:underline col-span-3 cursor-pointer">
             Sign out of all devices
           </div>
         </div>
