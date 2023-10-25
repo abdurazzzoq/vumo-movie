@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_API as string, {
-	apiVersion: '2022-11-15',
+	apiVersion: '2023-10-16',
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
@@ -15,7 +15,7 @@ if(req.method==='GET'){
 	const subscription = await stripe.subscriptions.list({
 		limit:1,
 		customer: customer?.id,
-		expand:['data.default_payment_method', 'data.customer']
+		expand:['data.default_payment_method', 'data.customer.invoice_settings.default_payment_method']
 	})
 	return res.status(200).json({subscription})
 }

@@ -46,15 +46,28 @@ export interface Subscription{
   }
   default_payment_method:{
     card:{
-      brand: string
-      exp_month: number;
-      exp_year: number;
+      brand?: string
+      exp_month?: number;
+      exp_year?: number;
       funding?: string;
-      last4:string
-    }
-    billing_details?:{
-      email?:string
-      name:string
+      last4?:string
     }
   }
+  customer: {
+		email: string;
+		metadata: {
+			user_id: string;
+		};
+    invoice_settings:{
+      default_payment_method:{
+        card:{
+          brand?: string
+          exp_month?: number;
+          exp_year?: number;
+          funding?: string;
+          last4?:string
+        }
+      }
+    }
+}
 }

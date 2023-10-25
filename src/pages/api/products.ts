@@ -4,7 +4,7 @@ import Stripe from 'stripe'
 
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_API as string, {
-  apiVersion: '2022-11-15',
+  apiVersion: '2023-10-16',
 });
 
 export default async function handler(
