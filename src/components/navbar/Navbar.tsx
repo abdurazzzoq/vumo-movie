@@ -1,63 +1,62 @@
-import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
-import { BiSearch, BiBellMinus } from "react-icons/bi";
-import { AiOutlineUser } from "react-icons/ai";
-import { RiLogoutCircleLine } from "react-icons/ri";
-import { AuthContext } from "@/context/auth.context";
-import Link from "next/link";
-import { useAuth } from "@/hooks/useAuth";
-
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { AiOutlineSearch, AiOutlineUser, AiOutlineLogout } from 'react-icons/ai';
+import { BiBellMinus } from 'react-icons/bi';
+import { useAuth } from 'src/hooks/useAuth';
+import NavMenu from '../nav-menu/nav-menu';
 
 const Navbar = () => {
-  const [scroll, setScroll] = useState(false);
-  const { logout } = useAuth();
+	const [scrolled, setScrolled] = useState(false);
+	const { logout } = useAuth();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 0) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
 
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+		window.addEventListener('scroll', handleScroll);
 
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
-  return (
-    <header className={`${scroll && "bg-[#141414]"}`}>
-      <div className="flex space-x-2 md:space-x-10 items-center">
-        <Image
+	return (
+		<header className={`${scrolled && 'bg-[#141414] shadow-lg'}`}>
+			<div className='flex items-center space-x-2 md:space-x-10'>
+      <Image
           src={"/Animate.svg"}
           alt="logo"
           width={56}
           height={56}
           className="object-contain cursor-pointer"
         />
-        <ul className="md:flex hidden space-x-4">
-          <li className="navLinks text-shadow-xl">Home</li>
-          <li className="navLinks text-shadow-xl">Movies</li>
-          <li className="navLinks text-shadow-xl">TV Shows</li>
-          <li className="navLinks text-shadow-xl">New</li>
-          <li className="navLinks text-shadow-xl">Popular</li>
-        </ul>
-      </div>
 
-      <div className="flex space-x-4 items-center text-sm font-light">
-        <BiSearch className="cursor-pointer h-6 w-6" />
-        <p className="hidden lg:block">Kids</p>
-        <BiBellMinus className="cursor-pointer h-6 w-6" />
-        <Link href={'/account'}>
-        <AiOutlineUser className="cursor-pointer h-6 w-6" />
-        </Link>
-        <RiLogoutCircleLine
-          className="cursor-pointer h-6 w-6"  
-          onClick={logout}
-        />
-      </div>
-    </header>
-  );
+				<NavMenu />
+
+				<ul className='space-x-4 md:flex hidden'>
+					<li className='navLink'>Home</li>
+					<li className='navLink'>Movies</li>
+					<li className='navLink'>TV Shows</li>
+					<li className='navLink'>New</li>
+					<li className='navLink'>Popular</li>
+				</ul>
+			</div>
+
+			<div className='flex items-center space-x-4 text-sm font-light'>
+				<AiOutlineSearch className='h-6 w-6 cursor-pointer' />
+				<p className='hidden lg:inline'>Kids</p>
+				<BiBellMinus className='h-6 w-6 cursor-pointer' />
+				<Link href={'/account'}>
+					<AiOutlineUser className='h-6 w-6 cursor-pointer' />
+				</Link>
+				<AiOutlineLogout className='h-6 w-6 cursor-pointer' onClick={logout} />
+			</div>
+		</header>
+	);
 };
 
 export default Navbar;

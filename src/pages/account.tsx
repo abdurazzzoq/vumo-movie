@@ -12,8 +12,7 @@ import Head from "next/head";
 import { useAuth } from "@/hooks/useAuth";
 
 const Account = ({subscription}:AccountProps) => {
-console.log(subscription);
-
+  
 const {logout}= useAuth()
 
 

@@ -5,7 +5,6 @@ import {FieldHookConfig, useField, ErrorMessage} from 'formik'
 // function is started 
 const TextField = ({...props}: TextFieldProps & FieldHookConfig<string>) => {
     const [field, meta] = useField(props)
-    console.log(meta);
     
     // validation part
   return (

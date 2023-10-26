@@ -1,5 +1,5 @@
-import { Products } from "@/interfaces/app.interface";
+import { Product } from "@/interfaces/app.interface";
 
 export interface PlanCardProps{
-    product: Products
+    product: Product
 }

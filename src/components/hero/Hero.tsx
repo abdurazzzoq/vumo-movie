@@ -23,7 +23,6 @@ const Hero = ({ trending }: HeroProps): JSX.Element => {
     setMovie(randomMovie);
     setTimeout(() => setLoading(false), 100);
   }, [trending]);
-  console.log(movie);
 
   const { setModal, setCurrentMovie } = useInfoStore();
 

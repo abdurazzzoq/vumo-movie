@@ -11,7 +11,6 @@ const [loading, setLoading] = useState<boolean>(false)
   const onSubmitSubscription = async(priceId:string)=>{
     setLoading(true)
     const payload = {email: user?.email, priceId}
-    console.log(payload);
 
     try {
       const response = await fetch('/api/subscription',{

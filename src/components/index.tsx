@@ -6,3 +6,4 @@ export { default as TextField } from "./text-field/text-field";
 export { default as Modal } from "./modal/modal";
 export { default as SubscriptionPlan } from "./subscriptionPlan/SubscriptionPlan";
 export { default as MembershipPlan } from "./membership-plan/membership-plan";
+export { default as NavMenu } from "./nav-menu/nav-menu";
