@@ -92,13 +92,13 @@ const Auth = () => {
 
 {auth === "signin" ? (
           <div className=" text-[gray]">
-            Akkauntingiz yo'qmi?{" "}
+            Akkauntingiz yoqmi?{" "}
             <button
               type="button"
               className=" text-white hover:underline"
               onClick={() => toggleAuth("signup")}
             >
-              Ro'yhatdan o'tish
+              Royhatdan otish
             </button>
           </div>
         ) : (
