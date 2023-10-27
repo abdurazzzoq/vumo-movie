@@ -39,7 +39,7 @@ const NavMenu = () => {
         <MenuItem onClick={handleClose}>Movies</MenuItem>
         <MenuItem onClick={handleClose}>TV Shows</MenuItem>
         <MenuItem onClick={handleClose}>New</MenuItem>
-        <MenuItem onClick={handleClose} >Popular</MenuItem>
+        <MenuItem onClick={handleClose}>Popular</MenuItem>
       </Menu>
     </div>
   );

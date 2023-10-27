@@ -18,7 +18,7 @@ const Thumbnail = ({movie, isBig}:ThumbnailProps) => {
 
 
   return (
-    <div onClick={handleCurrentMovie} className={`relative ${isBig ? "h-[400px] md:h-[550px] min-w-[350px] md:min-w-[470px]" : 'h-[330px] md:h-[440px] min-w-[200px] md:min-w-[292px]'} cursor-pointer ease-out hover:scale-95 overflow-hidden transition duration-200`}>
+    <div onClick={handleCurrentMovie} className={`relative ${isBig ? "h-[400px] md:h-[550px] min-w-[350px] md:min-w-[470px]" : 'h-[330px] md:h-[440px] min-w-[200px] md:min-w-[292px]'} cursor-pointer ease-out hover:scale-95 overflow-hidden overflow-y-hidden transition duration-200`}>
  <Image
           src={`${image_base}${movie?.backdrop_path || movie?.poster_path}`}
           alt={movie.title}
