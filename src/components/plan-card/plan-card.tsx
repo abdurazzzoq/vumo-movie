@@ -3,6 +3,7 @@ import { PlanCardProps } from './plan-card.props'
 import { RiVipCrown2Line } from 'react-icons/ri'
 import { AiOutlineHourglass, AiOutlineVideoCameraAdd } from 'react-icons/ai'
 import { AuthContext } from '@/context/auth.context'
+import Image from 'next/image'
 
 const PlanCard = ({product}:PlanCardProps) => {
 const [loading, setLoading] = useState<boolean>(false)
@@ -33,9 +34,11 @@ setLoading(false)
     <div key={product.id} className="max-w-sm cursor-pointer bg-white/20 px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
             <h3 className="text-[#e10865] mb-3 text-xl font-bold">{product.name}</h3>
             <div className="relative">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
                 alt="Colors"
+                width={300}
+                height={450}
                 className="rounded-xl w-full"
               />
               <p className="absolute top-0 bg-black/90 text-white font-bold py-1 px-3 rounded-br-lg rounded-tl-lg">
