@@ -1,6 +1,6 @@
 import { MembershipPlan } from "@/components";
 import { Subscription } from "@/interfaces/app.interface";
-import { API_REQUEST } from "@/pages/services/api.services";
+import { API_REQUEST } from "@/services/api.services";
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
