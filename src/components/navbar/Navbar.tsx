@@ -35,7 +35,7 @@ const Navbar = () => {
           className="object-contain cursor-pointer"
         />
 
-				<NavMenu />
+				{/* <NavMenu /> */}
 
 				<ul className='space-x-4 md:flex hidden'>
 					<li className='navLink'>Home</li>
